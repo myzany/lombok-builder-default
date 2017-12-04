@@ -13,10 +13,10 @@ import lombok.NoArgsConstructor;
  * @since 2017. 11. 21. PM 4:07
  */
 @Data
-@Builder
+@Builder(builderClassName = "PersonBuilder")
 @NoArgsConstructor
 @AllArgsConstructor
-public class LombokBuilderTest1Vo {
+public class Person {
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Inject Beans
@@ -62,7 +62,7 @@ public class LombokBuilderTest1Vo {
     // Inner Classes
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    public static class LombokBuilderTest1VoBuilder {
+    public static class PersonBuilder {
         private String firstName = "Doe";
         private String lastName = "John";
     }

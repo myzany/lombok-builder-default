@@ -1,7 +1,9 @@
 package kr.zany.test;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * <p><b></b></p>
@@ -12,7 +14,9 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class LombokBuilderTest2Vo {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Laptop {
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Inject Beans
@@ -23,10 +27,14 @@ public class LombokBuilderTest2Vo {
     // Member Variables
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    @Builder.Default private String firstName = "Doe";
-    @Builder.Default private String lastName = "John";
+    @Builder.Default private String manufacturer = "Apple. Inc.";
 
-    @Builder.Default private String sex = "male";
+    private String modelNo;
+    private String serialNo;
+
+    private String cpu;
+    private String mem;
+    private String vga;
 
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

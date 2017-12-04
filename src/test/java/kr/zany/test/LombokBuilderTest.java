@@ -36,13 +36,23 @@ public class LombokBuilderTest {
 
         // with @AllArgsConstructor
 
-        LombokBuilderTest1Vo lombokBuilderTest1Vo = new LombokBuilderTest1Vo();
+        Person person = new Person();
 
-        Assert.assertNull(lombokBuilderTest1Vo.getFirstName());
-        Assert.assertNull(lombokBuilderTest1Vo.getLastName());
-        Assert.assertNotNull(lombokBuilderTest1Vo.getSex());
+        Assert.assertNull(person.getFirstName());
+        Assert.assertNull(person.getLastName());
+        Assert.assertNotNull(person.getSex());
 
-        Assert.assertEquals("male", lombokBuilderTest1Vo.getSex());
+        Assert.assertEquals("male", person.getSex());
+
+
+        Laptop laptop = new Laptop();
+
+        Assert.assertNull(laptop.getManufacturer());
+        Assert.assertNull(laptop.getModelNo());
+        Assert.assertNull(laptop.getSerialNo());
+        Assert.assertNull(laptop.getCpu());
+        Assert.assertNull(laptop.getMem());
+        Assert.assertNull(laptop.getVga());
     }
 
     @Test
@@ -50,26 +60,27 @@ public class LombokBuilderTest {
 
         // provide a minimal Builder implementation containing the default values
 
-        LombokBuilderTest1Vo lombokBuilderTest1Vo = LombokBuilderTest1Vo.builder().build();
+        Person person = Person.builder().build();
 
-        Assert.assertNotNull(lombokBuilderTest1Vo.getFirstName());
-        Assert.assertNotNull(lombokBuilderTest1Vo.getLastName());
-        Assert.assertNull(lombokBuilderTest1Vo.getSex());
+        Assert.assertNotNull(person.getFirstName());
+        Assert.assertNotNull(person.getLastName());
+        Assert.assertNull(person.getSex());
 
-        Assert.assertEquals("Doe", lombokBuilderTest1Vo.getFirstName());
-        Assert.assertEquals("John", lombokBuilderTest1Vo.getLastName());
+        Assert.assertEquals("Doe", person.getFirstName());
+        Assert.assertEquals("John", person.getLastName());
 
         // with @Builder.Default
 
-        LombokBuilderTest2Vo lombokBuilderTest2Vo = LombokBuilderTest2Vo.builder().build();
+        Laptop laptop = Laptop.builder().build();
 
-        Assert.assertNotNull(lombokBuilderTest2Vo.getFirstName());
-        Assert.assertNotNull(lombokBuilderTest2Vo.getLastName());
-        Assert.assertNotNull(lombokBuilderTest2Vo.getSex());
+        Assert.assertNotNull(laptop.getManufacturer());
+        Assert.assertNull(laptop.getModelNo());
+        Assert.assertNull(laptop.getSerialNo());
+        Assert.assertNull(laptop.getCpu());
+        Assert.assertNull(laptop.getMem());
+        Assert.assertNull(laptop.getVga());
 
-        Assert.assertEquals("Doe", lombokBuilderTest2Vo.getFirstName());
-        Assert.assertEquals("John", lombokBuilderTest2Vo.getLastName());
-        Assert.assertEquals("male", lombokBuilderTest2Vo.getSex());
+        Assert.assertEquals("Apple. Inc.", laptop.getManufacturer());
     }
 
 
