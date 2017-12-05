@@ -30,7 +30,7 @@ public class Person {
     private String firstName;
     private String lastName;
 
-    private String sex = "male";
+    private String sex = "male";  // not working.
 
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
