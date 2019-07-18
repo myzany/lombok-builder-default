@@ -1,5 +1,6 @@
 package kr.zany.test;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -32,7 +33,7 @@ public class LombokBuilderTest {
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     @Test
-    public void constructorInitValue() {
+    public void initValuesFromConstructor() {
 
         // with @AllArgsConstructor
 
@@ -44,6 +45,10 @@ public class LombokBuilderTest {
 
         Assert.assertEquals("male", person.getSex());
 
+        System.out.println("-----------------------------------------");
+        System.out.println(ToStringBuilder.reflectionToString(person));
+        System.out.println("-----------------------------------------");
+
 
         Laptop laptop = new Laptop();
 
@@ -53,10 +58,14 @@ public class LombokBuilderTest {
         Assert.assertNull(laptop.getCpu());
         Assert.assertNull(laptop.getMem());
         Assert.assertNull(laptop.getVga());
+
+        System.out.println("-----------------------------------------");
+        System.out.println(ToStringBuilder.reflectionToString(laptop));
+        System.out.println("-----------------------------------------");
     }
 
     @Test
-    public void builderInitValue() {
+    public void initValuesFromBuilder() {
 
         // provide a minimal Builder implementation containing the default values
 
@@ -68,6 +77,10 @@ public class LombokBuilderTest {
 
         Assert.assertEquals("Doe", person.getFirstName());
         Assert.assertEquals("John", person.getLastName());
+
+        System.out.println("-----------------------------------------");
+        System.out.println(ToStringBuilder.reflectionToString(person));
+        System.out.println("-----------------------------------------");
 
         // with @Builder.Default
 
@@ -81,6 +94,10 @@ public class LombokBuilderTest {
         Assert.assertNull(laptop.getVga());
 
         Assert.assertEquals("Apple. Inc.", laptop.getManufacturer());
+
+        System.out.println("-----------------------------------------");
+        System.out.println(ToStringBuilder.reflectionToString(laptop));
+        System.out.println("-----------------------------------------");
     }
 
 

@@ -27,10 +27,13 @@ public class Person {
     // Member Variables
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    private String firstName;
-    private String lastName;
+    @Builder.Default
+    private String firstName = "Doe";
 
-    private String sex = "male";  // not working.
+    @Builder.Default
+    private String lastName = "John";
+
+    private String sex = "male";  // not working on Builder
 
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

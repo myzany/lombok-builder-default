@@ -27,7 +27,8 @@ public class Laptop {
     // Member Variables
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    @Builder.Default private String manufacturer = "Apple. Inc.";
+    @Builder.Default
+    private String manufacturer = "Apple. Inc.";
 
     private String modelNo;
     private String serialNo;
